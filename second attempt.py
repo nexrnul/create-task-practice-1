@@ -5,6 +5,8 @@ print("evaluate your daily consumption of water")
 #bottle   liter   glasses 
 #16.9oz  33.814oz   8oz
 
+
+#initially many problems with location at: x00q273123 (discuss error)
 def daily():
     daynum = 0
     for i in range(0,7):
@@ -16,10 +18,5 @@ def daily():
 
 userconsumptionlist = daily()
 
-def average():
 
 print(userconsumptionlist)
-#def calculations 
-
-#input("enter your daily consumption of water in liters for past 7 days")
-
