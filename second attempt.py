@@ -23,6 +23,11 @@ def daily(determination):
     global innerr 
     innerr = input(determination + " " + (str(daynum)) + " days ago:")
 
+def calculations(user_list, calc_list, formula):
+    for u in user_list:
+        S = int(u)
+        calc_list.append(formula(S)) 
+
 def calcaverage(list):
     avrg = sum(list)/len(list)
     roundd_avrg = (round(avrg))
@@ -54,28 +59,20 @@ for i in week:
     (daily("enter the number hours of exercise/physical activity you underwent(1, 2, 3, etc.) "))
     dailyxercise.append(int(innerr))
     os.system('clear')
-
 inpweight= int(input("enter your estimated body weight: "))
 os.system('clear')
 
-def calculations(user_list, calc_list, formula):
-    for u in user_list:
-        S = int(u)
-        calc_list.append(formula(S)) 
-
 calculations(dailyconsumption, calc_consumption, lambda formula: formula * msrs[inpmsr])
-
 calculations(dailyxercise, calcxercise, lambda formula: formula * (60//30 * 12))
-
 calculations(calcxercise, reccomended_oz, lambda formula: inpweight//2+formula)
 
 print(bold + blue + "your current average daily consumption is",(calcaverage(calc_consumption)))
 print(bold + blue + "with an average physical activity of",(calcaverage(dailyxercise)))
 print(bold + blue + "your water goal should be around",(calcaverage(reccomended_oz)), "every day")
-print(dailyxercise)
-print(calcxercise)
-print(calc_consumption)
-print(reccomended_oz)
+#print(dailyxercise)
+#print(calcxercise)
+#print(calc_consumption)
+#print(reccomended_oz)
 
 #average water consumed past week
 #average water consumption goal for week
