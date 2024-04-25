@@ -29,7 +29,7 @@ def segment_ii():
     inpmsr = input(bluue+ bold+"enter your preffered liquid measurment (liters, bottles, or glasses): ")
     os.system('clear')
 
-    record_data("enter your", inpmsr, daily_consumption)
+    record_data("enter your", inpmsr + " consumed", daily_consumption)
     record_data("enter the number hours of exercise/physical activity you underwent", "", daily_xercise)
 
     inpweight = int(input("enter your estimated body weight: "))
@@ -65,4 +65,5 @@ def calc_avrg(list, inpmsr):
         return f'{severity}{rounded_avrg} ounces{blue} (about {rounded_input} {inpmsr})'
 
 segment_ii()
+
 
